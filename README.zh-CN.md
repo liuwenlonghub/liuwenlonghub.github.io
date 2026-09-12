@@ -1,8 +1,8 @@
 # Evan Liu - Physical AI 与机器人
 
-本仓库包含 Evan Liu 的个人作品集网站，内容聚焦于 Physical AI、机器人、硬件、嵌入式系统和软件开发。
-
 [English](README.md) | [简体中文](README.zh-CN.md)
+
+本仓库包含 Evan Liu 的个人作品集网站，内容聚焦于 Physical AI、机器人、硬件、嵌入式系统和软件开发。
 
 ## 项目概览
 

@@ -49,7 +49,26 @@ Then visit <http://localhost:8000> in a browser.
 
 ## Deployment
 
-The site can be deployed to any static hosting provider. GitHub Pages is a natural choice for this repository: publish the repository's root directory as the site source, and the host will serve `index.html` as the entry page.
+This is a static website that requires no dependency installation or build command, and can be deployed to any static hosting provider. Both GitHub Pages and Cloudflare Pages can publish the repository's root directory and serve `index.html` as the entry page.
+
+### GitHub Pages
+
+Set the repository's root directory as the site source. No additional build configuration is required.
+
+### Cloudflare Pages
+
+Create a Pages project in the Cloudflare dashboard and connect this Git repository. Use the following build settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | None |
+| Root directory | Repository root (default) |
+| Build command | Leave blank |
+| Build output directory | `.` |
+
+No environment variables are required. After saving the settings, Cloudflare Pages will publish the repository root. Pushes to the production branch will trigger deployments automatically, and Pull Requests can generate preview deployments.
+
+To use a custom domain, add it under **Custom domains** in the Pages project and complete the DNS setup. The repository's `CNAME` file does not configure a custom domain for Cloudflare Pages automatically.
 
 ## External Links
 

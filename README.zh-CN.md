@@ -50,7 +50,26 @@ python3 -m http.server 8000
 
 ## 部署
 
-本网站可以部署到任何静态托管服务。GitHub Pages 是适合本仓库的选择：将仓库根目录发布为网站源目录，托管服务会自动使用 `index.html` 作为入口页面。
+本网站是纯静态站点，无需安装依赖或执行构建命令，可以部署到任何静态托管服务。GitHub Pages 和 Cloudflare Pages 均可直接发布仓库根目录，托管服务会使用 `index.html` 作为入口页面。
+
+### GitHub Pages
+
+将仓库根目录设为网站源目录即可，无需额外构建配置。
+
+### Cloudflare Pages
+
+在 Cloudflare 控制台中创建 Pages 项目并连接此 Git 仓库，然后使用以下构建设置：
+
+| 设置 | 值 |
+| --- | --- |
+| 框架预设 | None |
+| 根目录 | 仓库根目录（默认值） |
+| 构建命令 | 留空 |
+| 构建输出目录 | `.` |
+
+无需配置环境变量。保存设置后，Cloudflare Pages 会直接发布仓库根目录；之后推送到生产分支时会自动重新部署，Pull Request 也可以生成预览部署。
+
+如需使用自定义域名，请在 Pages 项目的 **Custom domains（自定义域名）** 中添加并完成 DNS 配置。仓库中的 `CNAME` 文件不会自动配置 Cloudflare Pages 的自定义域名。
 
 ## 外部链接
 
